@@ -8,9 +8,9 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { UserService } from './user.service';
-import { CreateUserDto } from './dtos/craete-user-dto';
-import { UpdateUserDto } from './dtos/update-user-dto';
+import { UserService } from '../services/user.service';
+import { CreateUserDto } from '../dtos/craete-user-dto';
+import { UpdateUserDto } from '../dtos/update-user-dto';
 
 @Controller('user')
 export class UserController {
