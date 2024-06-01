@@ -25,15 +25,18 @@ export class UserService {
       }
     }
   }
+
   async getUsers() {
     return await this.userRepository.find();
   }
+
   async getOneUser(id: number) {
     return await this.userRepository.findOne({ where: { id: id } });
   }
   async updateUser(id: number, updateUserDto: UpdateUserDto) {
     return await this.userRepository.update(id, updateUserDto);
   }
+
   async deleteUser(id: number) {
     return await this.userRepository.delete(id);
   }

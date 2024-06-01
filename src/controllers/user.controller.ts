@@ -15,18 +15,22 @@ import { UpdateUserDto } from '../validators/update-user-dto';
 @Controller('user')
 export class UserController {
   constructor(private userService: UserService) {}
+
   @Post()
   createUser(@Body() createUserDto: CreateUserDto) {
     return this.userService.creatingUser(createUserDto);
   }
+
   @Get()
   getUsers() {
     return this.userService.getUsers();
   }
+
   @Get(':id')
   getOneUser(@Param('id', ParseIntPipe) id: number) {
     return this.userService.getOneUser(id);
   }
+
   @Patch(':id')
   updateUser(
     @Param('id', ParseIntPipe) id: number,
@@ -34,6 +38,7 @@ export class UserController {
   ) {
     return this.userService.updateUser(id, updateUserDto);
   }
+
   @Delete(':id')
   deleteUser(@Param('id', ParseIntPipe) id: number) {
     return this.userService.deleteUser(id);
